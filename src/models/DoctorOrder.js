@@ -49,7 +49,17 @@ const doctorOrderSchema = new mongoose.Schema(
       required: true
     },
     orderedAt: { type: Date, default: Date.now },
-    authenticatedAt: { type: Date, default: null },
+    
+    authenticatedAt: {
+        type: Date,
+        default: null
+    },
+    authenticatedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        default: null
+    },
+
     status: {
       type: String,
       enum: [
