@@ -7,6 +7,7 @@ const patientRoutes = require("./modules/patients/patient.routes");
 const encounterRoutes = require("./modules/encounters/encounter.routes");
 const nursingRecordRoutes = require("./modules/nursing-records/nursingRecord.routes");
 const doctorOrderRoutes = require("./modules/doctor-orders/doctorOrder.routes");
+const carePlanRoutes = require("./modules/care-plans/carePlan.routes");
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use("/api/patients", patientRoutes);
 app.use("/api/encounters", encounterRoutes);
 app.use("/api/nursing-records", nursingRecordRoutes);
 app.use("/api/doctor-orders", doctorOrderRoutes);
+app.use("/api/care-plans", carePlanRoutes);
 
 app.use(errorHandler);
 
