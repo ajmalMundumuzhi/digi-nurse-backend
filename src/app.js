@@ -3,6 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const authRoutes = require("./modules/auth/auth.routes");
 const errorHandler = require("./middleware/error.middleware");
+const patientRoutes = require("./modules/patients/patient.routes");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/patients", patientRoutes);
 
 app.use(errorHandler);
 
