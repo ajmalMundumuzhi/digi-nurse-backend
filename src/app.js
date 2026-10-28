@@ -5,6 +5,7 @@ const authRoutes = require("./modules/auth/auth.routes");
 const errorHandler = require("./middleware/error.middleware");
 const patientRoutes = require("./modules/patients/patient.routes");
 const encounterRoutes = require("./modules/encounters/encounter.routes");
+const nursingRecordRoutes = require("./modules/nursing-records/nursingRecord.routes");
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.get("/api/health", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/patients", patientRoutes);    
 app.use("/api/encounters", encounterRoutes);
+app.use("/api/nursing-records", nursingRecordRoutes);
 
 app.use(errorHandler);
 
